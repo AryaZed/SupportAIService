@@ -54,7 +54,9 @@ builder.Services.AddScoped<ISupportTicketRepository, SupportTicketRepository>();
 builder.Services.AddScoped<ISupportTicketService, SupportTicketService>();
 builder.Services.AddScoped<ITenantRepository, TenantRepository>();
 builder.Services.AddScoped<ITenantService, TenantService>();
-builder.Services.AddSingleton<TicketAIService>(); 
+builder.Services.AddSingleton<TicketAIService>();
+builder.Services.AddSingleton<SentimentAnalysisService>(sp =>
+    new SentimentAnalysisService("SupportAI.ML/Models/SentimentModel.zip"));
 
 var app = builder.Build();
 

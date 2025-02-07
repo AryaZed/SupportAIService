@@ -47,7 +47,7 @@ namespace SupportAI.API.Endpoints
             {
                 Subject = new ClaimsIdentity(new[]
                 {
-                new Claim(ClaimTypes.NameIdentifier, user.Id),
+                new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
                 new Claim(ClaimTypes.Email, user.Email!),
                 new Claim("TenantId", user.TenantId.ToString()) // Multi-tenancy support
             }),

@@ -9,7 +9,7 @@ namespace SupportAI.ML.Models
 {
     public record TicketData
     {
-        [LoadColumn(0)] public required string IssueDescription { get; init; }
-        [LoadColumn(1)] public required string Category { get; init; } // Training Label
+        [LoadColumn(0)] public string IssueDescription { get; init; }
+        [LoadColumn(1)] public string Category { get; init; } // Training Label
     }
 }
